@@ -18,21 +18,21 @@ public class PageManagerSingleton {
 	private JavascriptExecutor js = null;
 	
 	private PageManagerSingleton() {
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\burak\\Selenium\\chromedriver.exe");
-		ChromeOptions options = new ChromeOptions();
+	System.setProperty("webdriver.chrome.driver","C:\\Users\\burak\\Selenium\\chromedriver.exe");
+	ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-notifications");
         options.addArguments("disable-popup-blocking");
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
         webDriver = new ChromeDriver(options);
         js = (JavascriptExecutor) webDriver;
-		webDriver.manage().window().maximize();	
+	webDriver.manage().window().maximize();	
 	} 
 	 
 	public static PageManagerSingleton getInstance(){
-        if (instance == null) {
-    	    instance = new PageManagerSingleton();
-        }
-        return  instance;	
+        	if (instance == null) {
+    		    instance = new PageManagerSingleton();
+        	}
+        	return  instance;	
 	}
 	
 	public String getWebsite() {	
@@ -62,7 +62,7 @@ public class PageManagerSingleton {
 	
 	public void click(By byElement) {
 		WebDriverWait wait = new WebDriverWait(webDriver, 2 , 5000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(byElement)).click();
+        	wait.until(ExpectedConditions.visibilityOfElementLocated(byElement)).click();
 	}
 	
 	public String getText(By byElement) {
