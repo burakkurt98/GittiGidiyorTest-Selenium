@@ -15,8 +15,8 @@ import org.junit.Test;
 
 public class TestCase {
 	
-	private static final String EMAIL = "burakkurt72@gmail.com";
-	private static final String PASSWORD = "Burak123452";
+	private static final String EMAIL = "@gmail.com";
+	private static final String PASSWORD = "xxx";
 
 	@Test
 	public void test() throws InterruptedException {
@@ -28,12 +28,12 @@ public class TestCase {
 		ProductDetailsPage productDetailsPage = new ProductDetailsPage();
 		Log4j.info("Go to Home Page");
 		homePage.goToHomePage();	
-        assertEquals(PageManagerSingleton.getInstance().webDriverGetTitle() , PageManagerSingleton.getInstance().getWebsite());   
-        Log4j.info("Go to Login Page");
+        	assertEquals(PageManagerSingleton.getInstance().webDriverGetTitle() , PageManagerSingleton.getInstance().getWebsite());   
+        	Log4j.info("Go to Login Page");
 		homePage.openLoginPopUp().goToLoginPage();
 		loginPage.setEmailAddressToTextbox(user.getEmail()).setPasswordAddressToTextbox(user.getPassword());
 		loginPage.clickLoginButton();
-        //Giris Yaptiktan Sonra Ana Sayfaya Yonlendirilir
+        	//Giris Yaptiktan Sonra Ana Sayfaya Yonlendirilir
 		Log4j.info("Go to Search Page");
 		homePage.setSearchedValueToTextbox();
 		homePage.clickSearchButton();
