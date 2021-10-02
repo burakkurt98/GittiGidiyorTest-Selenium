@@ -38,6 +38,7 @@ public class TestCase {
 		homePage.setSearchedValueToTextbox();
 		homePage.clickSearchButton();
 		Log4j.info("Go to Next Page");
+		PageManagerSingleton.getInstance().scrollPage(4000);
 		searchPage.goToNextPage();
 		assertEquals(PageManagerSingleton.getInstance().webDriverGetTitle(), "https://www.gittigidiyor.com/arama/?k=bilgisayar&sf=2");
 		searchPage.selectItem();
